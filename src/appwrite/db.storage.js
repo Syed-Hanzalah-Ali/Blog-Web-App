@@ -11,8 +11,8 @@ export class DbStorage{
         .setEndpoint(config.appwriteURL)
         .setProject(config.appwriteProjectID);
 
-        this.tableDB=new TablesDB(client);
-        this.storage=new Storage(client);
+        this.tableDB=new TablesDB(this.client);
+        this.storage=new Storage(this.client);
     }
 
     async createPost({title,slug,content,featuredImage,status,userId}){
